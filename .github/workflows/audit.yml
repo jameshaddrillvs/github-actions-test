@@ -37,5 +37,5 @@ jobs:
         uses: oke-py/npm-audit-action@v2.1.0
         with:
           create_issues: false
-          create_pr_comments: false
+          create_pr_comments: true
           github_token: ${{ secrets.GH_ACCESS_TOKEN }}
