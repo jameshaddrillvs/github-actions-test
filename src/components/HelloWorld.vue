@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
-      Let's change this text
+      Let's change to another thing
       <a
         href="https://cli.vuejs.org"
         target="_blank"
@@ -110,7 +110,7 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: {
-        type: String
+        type: String,
         default: ''
     }
   }
