@@ -39,4 +39,4 @@ jobs:
           create_issues: # optional, default is true
           # Flag to create pr comments when vulnerabilities are found
           create_pr_comments: # optional, default is true
-          github_token: {{ secrets.GH_ACCESS_TOKEN }}
+          github_token: ${{ secrets.GH_ACCESS_TOKEN }}
