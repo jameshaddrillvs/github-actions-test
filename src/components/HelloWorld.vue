@@ -2,8 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
+      Let's change this text
       <a
         href="https://cli.vuejs.org"
         target="_blank"
