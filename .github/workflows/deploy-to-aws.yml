@@ -25,26 +25,10 @@ jobs:
       - name: set up Node JS environment
         uses: actions/setup-node@v3.1.1
 
-      - name: Cache node modules
-        id: cache-nodemodules
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-node-modules
-        with:
-          # caching node_modules
-          path: node_modules
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-
-      - name: npm install
-        if: steps.cache-nodemodules.outputs.cache-hit != 'true'
-        run: npm install
-
-      - name: npm build
-        run: npm run build
+      - name: npm install and build
+        run: |
+          npm install
+          npm run build
           
       - name: S3 Sync
         uses: jakejarvis/s3-sync-action@v0.5.1
