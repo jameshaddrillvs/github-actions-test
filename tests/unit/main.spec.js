@@ -4,5 +4,5 @@ import mainComponent from '../../src/App.vue';
 test('displays image', () => {
     const wrapper = mount(mainComponent);
 
-    expect(wrapper.html()).toContain('img')
+    expect(wrapper.html()).toContain('img');
 });

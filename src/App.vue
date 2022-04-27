@@ -1,19 +1,22 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="GitHub Actions are very nice"/>
+    <img
+      alt="Vue logo"
+      src="./assets/logo.png"
+    >
+    <HelloWorld msg="GitHub Actions are very nice" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HelloWorld.vue';
 
 export default {
   name: 'App',
   components: {
     HelloWorld
   }
-}
+};
 </script>
 
 <style>
