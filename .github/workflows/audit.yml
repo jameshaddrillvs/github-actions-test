@@ -36,7 +36,6 @@ jobs:
         # uses: oke-py/npm-audit-action@c0410c237fe1bb94bdae2c509b089573b5c5956b
         uses: oke-py/npm-audit-action@v2.1.0
         with:
-          create_issues: true
-          # Flag to create pr comments when vulnerabilities are found
-          create_pr_comments: true
+          create_issues: false
+          create_pr_comments: false
           github_token: ${{ secrets.GH_ACCESS_TOKEN }}
