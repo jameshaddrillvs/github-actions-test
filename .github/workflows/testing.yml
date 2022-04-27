@@ -1,4 +1,4 @@
-name: Run Unit Tests
+name: Run Unit Tests and Linting
 "on": [ workflow_dispatch ]
 jobs:
   unit_test-lint:
@@ -13,7 +13,7 @@ jobs:
         run: npm install
 
       - name: Run tests 
-        run: npm test:unit
+        run: npm run test:unit
 
       - name: Run lint 
-        run: npm lint
+        run: npm run lint
