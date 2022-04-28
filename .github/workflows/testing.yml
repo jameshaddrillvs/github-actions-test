@@ -1,7 +1,5 @@
 name: Run Unit Tests and Linting
-"on":
-  push:
-  workflow_dispatch:
+"on": [push, pull_request, workflow_dispatch]
 jobs:
   unit_test-lint:
     runs-on: ubuntu-latest
