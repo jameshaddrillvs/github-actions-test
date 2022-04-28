@@ -1,7 +1,7 @@
-name: Run Unit Tests and Linting
-"on": [pull_request, workflow_dispatch]
+name: Lighthouse
+on: workflow_dispatch
 jobs:
-  unit_test-lint:
+  static-dist-dir:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -29,9 +29,11 @@ jobs:
         if: steps.cache-nodemodules.outputs.cache-hit != 'true'
         run: npm install
 
-      - name: Run tests 
-        run: npm run test:unit
+      - name: Build site
+        run: npm run build
 
-      - name: Run lint 
-        run: npm run lint
-  
+      - name: Run Lighthouse against a static dist dir
+        uses: treosh/lighthouse-ci-action@v9
+        with:
+          # no urls needed, since it uses local folder to scan .html files
+          configPath: './lighthouserc.json'
